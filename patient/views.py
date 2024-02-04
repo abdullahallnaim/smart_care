@@ -82,5 +82,6 @@ class UserLogoutView(APIView):
     def get(self, request):
         request.user.auth_token.delete()
         logout(request)
-        return redirect('login')
+         # return redirect('login')
+        return Response({'success' : "logout successful"})
         
